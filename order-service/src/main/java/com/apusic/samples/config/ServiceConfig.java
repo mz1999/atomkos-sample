@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ServiceConfig {
     @Bean(name = "/services/order")
-    TransactionalHttpInvokerServiceExporter storageService(OrderServiceImpl orderService) {
+    TransactionalHttpInvokerServiceExporter orderService(OrderServiceImpl orderService) {
         TransactionalHttpInvokerServiceExporter exporter = new TransactionalHttpInvokerServiceExporter();
         exporter.setService(orderService);
         exporter.setServiceInterface(OrderService.class);
